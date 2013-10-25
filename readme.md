@@ -12,27 +12,37 @@ jquery-cmd-t requires two things:
 Here we're connecting the `#todo_filter` input to filter the todo line items. The `elements` option is a selector that grabs all the elements you want to hide/show. The `filter` option returns the text value that you want to match against. Your filters are executed in context of the element so you can dive deeper into any element to find which text you want to match against.
 
 ```html
-<h1>Todo Items</h1>
-<ul class="todos">
-  <li>Get bread</li>
-  <li>Get milk</li>
-  <li>Get butter</li>
-</ul>
+<!DOCTYPE HTML>
+<html>
+  <body>
 
-<input type="text" id="todo_filter" placeholder="Filter...">
+    <h1>Todo Items</h1>
+    <ul class="todos">
+      <li>Get bread</li>
+      <li>Get milk</li>
+      <li>Get butter</li>
+    </ul>
 
-<script>
-$(function() {
-    $("#todo_filter").cmd_t({
-        elements: $(".todos li"),
-        filter: function() {
-            return $(this).text();
-        }
-    });
-});
-</script>
+    <input type="text" id="todo_filter" placeholder="Filter...">
+
+    <!-- include jquery and cmd_t.js -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="cmd_t.js"></script>
+
+    <!-- Bind to the input to filter out li's in the todo list.
+    <script type="text/javascript">
+      $(function() {
+        $("#todo_filter").cmd_t({
+          elements: $(".todos li"), // Filter li's
+          filter: function() {
+            return $(this).text(); // filter them based upon the text
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
 ```
-
 
 ## TODO
 * Add hook to listen for when the letter "t" is pressed to automatically highlight input field automatically
