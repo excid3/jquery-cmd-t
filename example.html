@@ -1,0 +1,28 @@
+<!DOCTYPE HTML>
+<html>
+  <body>
+
+    <h1>Todo Items</h1>
+    <ul class="todos">
+      <li>Get bread</li>
+      <li>Get milk</li>
+      <li>Get butter</li>
+    </ul>
+
+    <input type="text" id="todo_filter" placeholder="Filter...">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script type="text/javascript" src="cmd_t.js"></script>
+    <script type="text/javascript">
+      $(function() {
+        return $("#todo_filter").cmd_t({
+          elements: $(".todos li"),
+          filter: function() {
+            return $(this).text();
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
+
