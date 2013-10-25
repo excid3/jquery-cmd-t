@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>jQuery-cmd-t by excid3</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/excid3/jquery-cmd-t">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/excid3/jquery-cmd-t/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/excid3/jquery-cmd-t/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>jQuery-cmd-t</h1>
+          <p>A javascript implementation of the Vim Command-T plugin to filter elements on a page</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/excid3">excid3</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        <h1>
+<a name="jquery-cmd-t" class="anchor" href="#jquery-cmd-t"><span class="octicon octicon-link"></span></a>jquery-cmd-t</h1>
+
+<p>jquery-cmd-t is a super simple jQuery plugin for adding quick filtering elements on a page similar to Vim's Command-T and Ctrl-P plugins. Github also added the <a href="https://github.com/blog/793-introducing-the-file-finder">File Finder</a> that this idea is mostly based on.</p>
+
+<h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>jquery-cmd-t requires two things:</p>
+
+<ol>
+<li>HTML elements you want to filter</li>
+<li>An input field that is used to filter those elements</li>
+</ol><p>Here we're connecting the <code>#todo_filter</code> input to filter the todo line items. The <code>elements</code> option is a selector that grabs all the elements you want to hide/show. The <code>filter</code> option returns the text value that you want to match against. Your filters are executed in context of the element so you can dive deeper into any element to find which text you want to match against.</p>
+
+<div class="highlight highlight-html"><pre><span class="cp">&lt;!DOCTYPE HTML&gt;</span>
+<span class="nt">&lt;html&gt;</span>
+  <span class="nt">&lt;body&gt;</span>
+
+    <span class="nt">&lt;h1&gt;</span>Todo Items<span class="nt">&lt;/h1&gt;</span>
+    <span class="nt">&lt;ul</span> <span class="na">class=</span><span class="s">"todos"</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;li&gt;</span>Get bread<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>Get milk<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;li&gt;</span>Get butter<span class="nt">&lt;/li&gt;</span>
+    <span class="nt">&lt;/ul&gt;</span>
+
+    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">"text"</span> <span class="na">id=</span><span class="s">"todo_filter"</span> <span class="na">placeholder=</span><span class="s">"Filter..."</span><span class="nt">&gt;</span>
+
+    <span class="c">&lt;!-- include jquery and cmd_t.js --&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"cmd_t.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+    <span class="c">&lt;!-- Bind to the input to filter out li's in the todo list.</span>
+<span class="c">    &lt;script type="text/javascript"&gt;</span>
+<span class="c">      $(function() {</span>
+<span class="c">        $("#todo_filter").cmd_t({</span>
+<span class="c">          elements: $(".todos li"), // Filter li's</span>
+<span class="c">          filter: function() {</span>
+<span class="c">            return $(this).text(); // filter them based upon the text</span>
+<span class="c">          }</span>
+<span class="c">        });</span>
+<span class="c">      });</span>
+<span class="c">    &lt;/script&gt;</span>
+<span class="c">  &lt;/body&gt;</span>
+<span class="c">&lt;/html&gt;</span>
+</pre></div>
+
+<h2>
+<a name="todo" class="anchor" href="#todo"><span class="octicon octicon-link"></span></a>TODO</h2>
+
+<ul>
+<li>Add hook to listen for when the letter "t" is pressed to automatically highlight input field automatically</li>
+</ul><h2>
+<a name="author" class="anchor" href="#author"><span class="octicon octicon-link"></span></a>Author</h2>
+
+<p>Written by <a href="excid3.com">Chris Oliver</a></p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
