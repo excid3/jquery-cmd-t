@@ -2,6 +2,12 @@
 
 jquery-cmd-t is a super simple jQuery plugin for adding quick filtering elements on a page similar to Vim's Command-T and Ctrl-P plugins. Github also added the [File Finder](https://github.com/blog/793-introducing-the-file-finder) that this idea is mostly based on.
 
+It hooks up a keyboard shortcut to the letter "t". When you press it,
+the search field is automatically focused and the user can start typing.
+When text is entered in the search field the elements are filtered out
+based upon the filter callback that you setup. Escape is also bound so
+you can hit escape and clear the filter easily.
+
 [View Example](http://excid3.github.io/jquery-cmd-t/example.html)
 
 ## Usage
