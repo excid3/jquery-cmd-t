@@ -6,7 +6,7 @@
       $search_field = this;
       $elements = options.elements;
       $filter_function = options.filter;
-      return $search_field.on("keyup", function() {
+      $search_field.on("keyup", function() {
         var query, re;
         query = $(this).val().toLowerCase();
         re = new RegExp(query, "i");
@@ -19,6 +19,21 @@
             return $(elem).hide();
           }
         });
+      });
+      return $(document).keyup(function(e) {
+        var keyCode;
+        e = e || window.event;
+        keyCode = e.keyCode || e.which;
+        if (keyCode === 84) {
+          $search_field.focus();
+          e.preventDefault();
+        }
+        if (keyCode === 27 && $(":focus").prop("id") === "project_filter") {
+          $search_field.val("");
+          $search_field.trigger("keyup");
+          $search_field.blur();
+          return e.preventDefault();
+        }
       });
     };
   });
