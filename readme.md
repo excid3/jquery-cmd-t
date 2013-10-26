@@ -37,7 +37,7 @@ Here we're connecting the `#todo_filter` input to filter the todo line items. Th
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script type="text/javascript" src="cmd_t.js"></script>
 
-    <!-- Bind to the input to filter out li's in the todo list.
+    <!-- Bind to the input to filter out li's in the todo list. -->
     <script type="text/javascript">
       $(function() {
         $("#todo_filter").cmd_t({
