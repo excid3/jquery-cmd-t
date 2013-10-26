@@ -28,7 +28,7 @@
           $search_field.focus();
           e.preventDefault();
         }
-        if (keyCode === 27 && $(":focus").prop("id") === "project_filter") {
+        if (keyCode === 27 && $(":focus").prop("id") === $search_field.prop("id")) {
           $search_field.val("");
           $search_field.trigger("keyup");
           $search_field.blur();
