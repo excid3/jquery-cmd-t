@@ -61,19 +61,19 @@
     <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
     <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span> <span class="na">src=</span><span class="s">"cmd_t.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 
-    <span class="c">&lt;!-- Bind to the input to filter out li's in the todo list.</span>
-<span class="c">    &lt;script type="text/javascript"&gt;</span>
-<span class="c">      $(function() {</span>
-<span class="c">        $("#todo_filter").cmd_t({</span>
-<span class="c">          elements: $(".todos li"), // Filter li's</span>
-<span class="c">          filter: function() {</span>
-<span class="c">            return $(this).text(); // filter them based upon the text</span>
-<span class="c">          }</span>
-<span class="c">        });</span>
-<span class="c">      });</span>
-<span class="c">    &lt;/script&gt;</span>
-<span class="c">  &lt;/body&gt;</span>
-<span class="c">&lt;/html&gt;</span>
+    <span class="c">&lt;!-- Bind to the input to filter out li's in the todo list. --&gt;</span>
+    <span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+      <span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">"#todo_filter"</span><span class="p">).</span><span class="nx">cmd_t</span><span class="p">({</span>
+          <span class="nx">elements</span><span class="o">:</span> <span class="nx">$</span><span class="p">(</span><span class="s2">".todos li"</span><span class="p">),</span> <span class="c1">// Filter li's</span>
+          <span class="nx">filter</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">text</span><span class="p">();</span> <span class="c1">// filter them based upon the text</span>
+          <span class="p">}</span>
+        <span class="p">});</span>
+      <span class="p">});</span>
+    <span class="nt">&lt;/script&gt;</span>
+  <span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
 </pre></div>
 
 <h2>
